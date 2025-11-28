@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Age Calculator</title>
+        <style>
+            *{
+                font-family: Arial, Helvetica, sans-serif;
+                box-sizing: border-box;
+            }
+            html,body{
+                margin: 0;
+                padding: 0;
+            }
+            body{
+                width: 100%;
+                height: 100vh;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .age-calculator-container{
+                width: 350px;
+                height: 250px;
+                padding: 20px;
+                border: 2px solid #000;
+                border-radius: 10px;
+                display: flex;
+                flex-direction: column;
+                
+            }
+          
+            .age-calculator-container .input-container{
+                display: flex;
+                flex-direction: column;
+                line-height: 80px;
+            }
+            .age-calculator-container .input-container label{
+                font-family: 700;
+                font-size: 1.8rem;
+                text-align: center;
+                letter-spacing: -1px;
+            }
+            .age-calculator-container .input-container input#age-calculator{
+                width: 100%;
+                height: 40px;
+                padding: 0 10px;
+                font-size: 1rem;
+                border: 2px solid #000;
+                border-radius: 5px;
+            }
+
+            .age-calculator-container .age-container{
+                width: 100%;
+                height: 200px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+            }
+            .age-calculator-container .age-container span{
+                letter-spacing: 2px;
+                font-size:1.2rem ;
+                display: inline-block;
+                margin: 0 5px;
+            }
+            .age-calculator-container .age-container span#your-age{
+                font-size: 1.5rem;
+                font-weight: 500;
+            }
+        </style>
+    </head>
+    <body>
+
+        <div class="age-calculator-container">
+            <div class="input-container">
+                <label for="age-calculator">Age Calculator</label>
+                <input type="date" name="Age Calculator" id="age-calculator">
+            </div>
+            <div class="age-container">
+                <span>Your age is:</span>
+                <span id="your-age">0</span>
+            </div>
+           
+        </div>
+
+        <script>
+         const birthDate = document.getElementById('age-calculator');
+         const yourAge = document.getElementById('your-age');
+        
+         function calculateAge(){
+            const getCurrentYear = new Date().getFullYear();
+            const getBirthYear = new Date(birthDate.value).getFullYear();
+            yourAge.innerText = getCurrentYear - getBirthYear;
+         }
+
+        birthDate.addEventListener('change', calculateAge);
+        </script>
+    </body>
+</html>
