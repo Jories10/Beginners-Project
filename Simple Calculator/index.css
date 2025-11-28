@@ -1,0 +1,121 @@
+ *{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+body {
+    width:100%;
+    height:100vh;
+    background-image: url('pexels-sebastiaan9977-1097456.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size:16px;
+    color:black;
+    font-weight:400;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+
+    
+}
+
+.calc-container{
+    width: clamp(28rem,calc(30vw - 1rem),50rem );
+    height: max-content;
+    border-radius: 0.5em;
+    padding: 3em 2em;
+    background-color: rgba(255, 255, 255, 0.1);
+    filter: drop-shadow(0 0 10px black);
+    z-index: 1;
+}
+.calc-container input#calculation{
+    display: block;
+    width: clamp(8rem, calc(100vw - 1rem), 100%);
+    height: 70px;
+    margin: 1rem 0 3rem;
+    border-radius: 5px;
+    border: none;
+    background-color: rgb(211, 211, 211);
+    text-indent: 0.4rem;
+    letter-spacing: 0.1rem;
+    font-size: 1rem;
+    color: white;
+    font-weight: 500;
+}
+.calc-container #btn-wrapper{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: 4rem;
+    column-gap: 1.2rem;
+    row-gap: 1.5rem;
+}
+.calc-container #btn-wrapper button{
+    border-radius: 5px;
+    border: 1px solid gray;
+    font-size: clamp(1rem, calc(2vw - 1rem), 3rem);
+    font-weight: 500;
+    transition: all 100ms ease-in-out;
+}
+.calc-container #btn-wrapper button:hover{
+    background-color: gray;
+    color: white;
+}
+
+.calc-container #btn-wrapper button[data-action="delete"]{
+    background-color: red;
+    color: white;
+}
+.calc-container #btn-wrapper button[data-action="clear"]{
+    background-color: rgb(113, 0, 0);
+    color: white;
+}
+
+.errorMessage{
+    background-color: rgb(202, 202, 202);
+    color: rgb(0, 0, 0);
+    width: 20%;
+    height: 15rem;
+    padding: 0 1rem;
+    text-align: center;
+    align-content: center;
+    font-size: 1.5rem;
+    border-radius: 4px;
+    position: absolute;
+    top: 5rem;
+    left: 3.5rem;
+    z-index: 1;
+}
+.boxDialog{
+    width: 100%;
+    height: auto;
+    font-size: 1rem;
+    background-color: red;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    position: absolute;
+    top: 0;
+    z-index: 1;
+}
+
+#btnClose{
+    position: absolute;
+    top: 3px;
+    right: 3px;
+    z-index: 1;
+}
+
+.warningMessage{
+    padding: 1rem 0;
+    text-align: center;
+    align-content: center;
+    font-size: 1.2rem;
+    position: absolute;
+    top:0;
+    left: 0;
+    right: 0;
+    background-color: red;
+    color: white;
+}
