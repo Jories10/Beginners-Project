@@ -1,0 +1,120 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+}
+body{
+    width: 100%;
+    max-width: 100%;
+    height: 100vh;
+    display: grid;
+    grid-template-areas: "stack";
+    align-items: center;
+    justify-items: center;
+    background-image: url("../assets/istockphoto-530518105-612x612.jpg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
+
+body > button{
+    position: absolute;
+    top: 1em;
+    right: 2em;
+    width: 80px;
+    height: auto;
+    border-radius: 10px;
+    border: none;
+    background-color: transparent;
+    color: rgb(255, 231, 47);
+    font-size: 2rem;
+    cursor: pointer;
+    transition: all 500ms ease-in-out;
+}
+body > button:hover{
+     filter: drop-shadow(0 4px 10px rgb(234, 234, 75));
+}
+
+
+article{
+    width: clamp(20rem, calc(35vw - 2rem), 100rem);
+    background-color: rgba(0, 0, 0, 0.700);
+    -webkit-backdrop-filter: blur(2px);
+    backdrop-filter: blur(2px);
+    grid-area: stack;
+    padding: 3em 2em;
+    border-radius: 1em;
+    position: relative;
+}
+article > button{
+    display: none;
+    width:3rem;
+    font-size: 2rem;
+    border-radius: 15px;
+    border: none;
+    position: absolute;
+    top: 10px;
+    right: 12px;
+    color: yellow;
+    background-color: transparent;
+    padding: 0.1em 0;
+    filter: drop-shadow( 0 4px 10px rgb(239, 239, 86));
+    cursor: pointer;
+    transition: all 500ms ease-in-out;
+}
+
+article > button:hover{
+    filter: drop-shadow(0 4px 10px rgb(234, 234, 75));
+}
+article .content{
+    display: flex;
+    flex-direction: column;
+}
+article .content img{
+    width: calc(100% - 5rem);
+    height: 30vh;
+    border-radius: 100%;
+    margin: 0 auto;
+    filter: drop-shadow(0 0 3px lightgray);
+}
+article .content h2{
+    font: clamp(1rem, calc(4vw + 1rem), 5rem);
+    text-align: left;
+    margin: 1em 0;
+    color: rgb(245, 101, 29);
+    text-transform: uppercase;
+}
+article .content p{
+    font-size: clamp(0.5rem, calc(1vw -0.3rem), 3rem);
+    color: white;
+    letter-spacing: 1px;
+    margin:1em 0;
+}
+article .content button{
+    width: minmax(2.5rem, 100%);
+    height: 38px;
+    border-radius: 5px;
+    border: none;
+    margin-top: 1em;
+    text-transform: uppercase;
+    transition: all 500ms ease-in-out 20ms;
+}
+article .content button:hover{
+    background-color: rgba(0, 0, 0, 0.700);
+    color: darkgray;
+}
+
+
+@media screen and (max-width:756px) {
+    
+    body > button{
+        display: none;
+    }
+    article > button{
+        display: block;
+    }
+    article .content h2{
+        text-align: center;
+    }
+}
